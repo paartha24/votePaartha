@@ -2,7 +2,7 @@ name: Scheduled Vote by Geetha
 
 on:
   schedule:
-    - cron: '*/10,40 * * * *' # Runs At every 10th & 40th minutes
+    - cron: '*/10,*/40 * * * *' # Runs At every 10th & 40th minutes
   workflow_dispatch:       # Allows manual trigger
 
 jobs:
