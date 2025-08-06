@@ -2,7 +2,7 @@ name: Scheduled Vote by Kushal
 
 on:
   schedule:
-    - cron: '*/15,45 * * * *' # Runs At every 15th & 45th minutes
+    - cron: '*/15,*/45 * * * *' # Runs At every 15th & 45th minutes
   workflow_dispatch:       # Allows manual trigger
 
 jobs:
