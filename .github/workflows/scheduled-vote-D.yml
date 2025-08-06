@@ -2,7 +2,7 @@ name: Scheduled Vote by Kush
 
 on:
   schedule:
-    - cron: '*/25,55 * * * *' # Runs At every 25th & 55th minutes
+    - cron: '*/25,*/55 * * * *' # Runs At every 25th & 55th minutes
   workflow_dispatch:       # Allows manual trigger
 
 jobs:
