@@ -2,7 +2,7 @@ name: Scheduled Vote by Bharath
 
 on:
   schedule:
-    - cron: '*/33,04 * * * *' # Runs At every 33rd & 04th minutes
+    - cron: '*/33,*/03 * * * *' # Runs At every 33rd & 04th minutes
   workflow_dispatch:       # Allows manual trigger
 
 jobs:
