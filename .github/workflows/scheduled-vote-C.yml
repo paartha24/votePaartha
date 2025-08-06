@@ -1,0 +1,29 @@
+name: Scheduled Vote by Kushal
+
+on:
+  schedule:
+    - cron: '*/10,40 * * * *' # Runs At every 10th & 40th minutes
+  workflow_dispatch:       # Allows manual trigger
+
+jobs:
+    run-tests:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+            ############################################
+            # Install node & setup dependencies
+            ############################################
+            - uses: actions/setup-node@v3
+              with: 
+                node-version: '18'
+
+            - name: Install Playwright dependencies
+              run: npm install
+              # run: npm install -D @playwright/test
+
+            - name: Install Playwright browsers
+              run: npx playwright install --with-deps
+
+            - name: Run Playwright tests
+              run: npx playwright test 'voteForPaartha3.spec.ts'

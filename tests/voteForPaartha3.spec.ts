@@ -1,0 +1,9 @@
+import { test,request, expect } from '@playwright/test';
+import { votePaartha } from '../utils/apiVotePaartha';
+
+test('Vote for Paartha Saarati using gmail - Geetha', async ({ page }) => {
+    const cookieValue = `wordpress_sec_920422acd07a83c58dc44974de4ce159=google_ge%7C1755669643%7C4hZ98camTGAkDVUoKUhVAEo6aC5ZAhEUqw34KPglZ3D%7C51b2db904a64a3aa5e8b2cbcc8af7ec5b2bf8b3271b9c1bfd0268971c40d6f6d; _ga=GA1.1.33513166.1754459598; _gcl_au=1.1.270442420.1754459598; _cc_id=af25ff6d6f01fbcca7e54bc15696177; panoramaId_expiry=1754545998521; _fbp=fb.1.1754459598654.286204379190303027; cto_bundle=1778HV8lMkIxV2FJelpSJTJCNUNDdEkwM0l5R3NsSFE0Tnl2TGc3TFRBQm1uVVBGRSUyQnh6S1lNTHlJcTF0QWJOc3JaRXJiJTJCcXhBRTlIc0pTeW92MkoyakQyU3dBRWZhUDZkdVk3ZzRQR1l4dTRCd1YxTENkN2VUcEx6Q3U5SUtldTZsZjBCYUZ1; wordpress_test_cookie=WP%20Cookie%20check; _lscache_vary=3367d4bbc7b3539b9faab173f720a26d; wordpress_logged_in_920422acd07a83c58dc44974de4ce159=google_ge%7C1755669643%7C4hZ98camTGAkDVUoKUhVAEo6aC5ZAhEUqw34KPglZ3D%7C882692c50997716f100b46d30348aee534ea67f2322fa7676c850f1288bcf4b4; _ga_LDMCKTGX8S=GS2.1.s1754459598^$o1^$g1^$t1754460045^$j58^$l0^$h1706609893; __gads=ID=64cd00c9151a7e54:T=1754459599:RT=1754460046:S=ALNI_Ma9ftcWegswJIaezw7RXADpfc-ETw; __gpi=UID=0000117b983fe12f:T=1754459599:RT=1754460046:S=ALNI_Mb16JcLcmCEFihqCgcZrC2Q-qfqLQ; __eoi=ID=df450c3b3f361501:T=1754459599:RT=1754460046:S=AA-Afjb4Cg0ufMijJNTX_xme2Qtc; FCNEC=%5B%5B%22AKsRol9z9zKIcc17-w4DPya8zPdbFZmMp5x5Zdy21sJCgpeS0qQa2HDMlwsrwr9ytrpHrQG3MZq91VY0KiTR0cq4naJsA0fq7smc2ikP52bgN9LqqgI9RW_5Jk0f1-Qh8O8Jh1ImcvX0fH_rr1zLhtu5ka-0eP6hXg%3D%3D%22%5D%5D; pum-9794=true`;
+    const nonceId = 'e97ff90ca1';
+    const apiContext = await request.newContext();
+    await votePaartha(cookieValue, nonceId, 'Geetha');   //Vote for Paartha Saarati through API
+});
